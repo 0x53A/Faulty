@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5A86453B-96FB-4B6E-A283-225BB9F753D3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>PropertyChangedTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FSharp.Core, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Build.Tasks.v4.0" />
+    <Reference Include="Microsoft.Build.Utilities.v4.0" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mono.Cecil, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\FodyCecil.1.29.2\lib\net40\Mono.Cecil.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\FodyCecil.1.29.2\lib\net40\Mono.Cecil.Mdb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\FodyCecil.1.29.2\lib\net40\Mono.Cecil.Pdb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\FodyCecil.1.29.2\lib\net40\Mono.Cecil.Rocks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NSubstitute, Version=1.8.2.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\NSubstitute.1.8.2.0\lib\net45\NSubstitute.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyWithBadNamedInvokerTests.cs" />
+    <Compile Include="AssemblyWithInterceptorTests.cs" />
+    <Compile Include="Attributes\NotifyPropertyChangedAttribute.cs" />
+    <Compile Include="CheckForEqualityConfigTests.cs" />
+    <Compile Include="TypeFilterTests.cs" />
+    <Compile Include="EventInvokerNamesConfigTests.cs" />
+    <Compile Include="MappingFinder\MappingFinderSingleBackingReadonlyFieldGet.cs" />
+    <Compile Include="MappingFinder\MappingFinderSingleBackingConstantFieldGet.cs" />
+    <Compile Include="OnPropertyNameChangedConfigTests.cs" />
+    <Compile Include="FSharpTest.cs" />
+    <Compile Include="HasEqualityCheckerTests.cs" />
+    <Compile Include="IlGeneratedByDependencyReaderTests\WithGenericAutoProperties.cs" />
+    <Compile Include="IlGeneratedByDependencyReaderTests\WithGenericFields.cs" />
+    <Compile Include="MappingFinder\MappingFinderAutoPropertiesAndDodgyField.cs" />
+    <Compile Include="MappingFinder\MappingFinderInnerClass.cs" />
+    <Compile Include="MappingFinder\MappingFinderLowerCaseBackingFields.cs" />
+    <Compile Include="MappingFinder\MappingFinderSingleBackingFieldsGet.cs" />
+    <Compile Include="MappingFinder\MappingFinderSingleBackingFieldsSet.cs" />
+    <Compile Include="MappingFinder\MappingFinderWithAutoProperties.cs" />
+    <Compile Include="DotNet4AssemblyResolver.cs" />
+    <Compile Include="PropertyInfoCheckers\PropertyChangedArgWithNoGetInfoCheckerTest.cs" />
+    <Compile Include="RecursiveIlFinderTests.cs" />
+    <Compile Include="IlGeneratedByDependencyReaderTests\WithLambda.cs" />
+    <Compile Include="IlGeneratedByDependencyReaderTests\WithVirtualAutoProperties.cs" />
+    <Compile Include="PropertyInfoCheckers\BeforeAfterWithNoGetInfoCheckerTest.cs" />
+    <Compile Include="ReferenceFinder.cs" />
+    <Compile Include="StackOverflowCheckerTests.cs" />
+    <Compile Include="AssemblyWithBlockingClassTests.cs" />
+    <Compile Include="PropertyInfoCheckers\IndexerCheckerTest.cs" />
+    <Compile Include="AssemblyUsingAttributeWrongTests.cs" />
+    <Compile Include="AssemblyWithBaseInDifferentModuleTests.cs" />
+    <Compile Include="AssemblyWithNonVoidOnPropertyChangedTests.cs" />
+    <Compile Include="Attributes\DependsOnAttribute.cs" />
+    <Compile Include="AttributeReaders\DependsOnDataAttributeReaderTests.cs" />
+    <Compile Include="EventTester.cs" />
+    <Compile Include="ExperimentTests.cs" />
+    <Compile Include="IlGeneratedByDependencyReaderTests\WithDoNotNotifyProperty.cs" />
+    <Compile Include="IlGeneratedByDependencyReaderTests\WithAutoProperties.cs" />
+    <Compile Include="IlGeneratedByDependencyReaderTests\WithCamelCaseFields.cs" />
+    <Compile Include="IlGeneratedByDependencyReaderTests\WithUnderScoreFields.cs" />
+    <Compile Include="IlGeneratedByDependencyReaderTests\WithUpperCaseUnderScoreFields.cs" />
+    <Compile Include="MappingFinder\MappingFinderUnderScoreBackingFields.cs" />
+    <Compile Include="MethodFinderTest.cs" />
+    <Compile Include="Net4ClientWeavingTaskTests.cs" />
+    <Compile Include="Net4WeavingTaskTests.cs" />
+    <Compile Include="BaseTaskTests.cs" />
+    <Compile Include="PhoneWeavingTaskTests.cs" />
+    <Compile Include="DefinitionFinder.cs" />
+    <Compile Include="Attributes\DoNotNotifyAttribute.cs" />
+    <Compile Include="PropertyInfoCheckers\AbstractInfoCheckerTest.cs" />
+    <Compile Include="TypeEqualityFinderTests.cs" />
+    <Compile Include="AlreadyNotifyFinderTest.cs" />
+    <Compile Include="PropertyInfoCheckers\CheckForEqualityWithNoBackingFieldSetInfoCheckerTest.cs" />
+    <Compile Include="Verifier.cs" />
+    <Compile Include="VersionReader.cs" />
+    <Compile Include="WeaverHelper.cs" />
+    <Compile Include="XmlExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Faulty.Fody\Faulty.Fody.csproj">
+      <Project>{C3578A7B-09A6-4444-9383-0DEAFA4958BD}</Project>
+      <Name>Faulty.Fody</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestAssemblies\AssemblyToProcess\AssemblyToProcess.csproj">
+      <Project>{43ec5c12-43e3-4cdc-afa3-4156a910a4fc}</Project>
+      <Name>AssemblyToProcess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
