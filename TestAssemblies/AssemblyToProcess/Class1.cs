@@ -15,7 +15,7 @@ namespace AssemblyToProcess
 			{
 
 			}
-			catch
+			catch (Exception ex)
 			{
 				Block.ConvertToTryFault();
 			}
