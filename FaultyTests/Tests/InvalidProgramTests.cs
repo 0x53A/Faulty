@@ -37,5 +37,18 @@ namespace Tests
 		{
 
 		}
+
+		public void DetectStatementDirectlyAfterFinally()
+		{
+			/* try 
+			 * {
+			 * }
+			 * finally
+			 * {
+			 *	   Block.ConvertFinallyToFault();
+			 * }
+			 * Block.ConvertFinallyToFault();		<-- should fail here
+			 */
+		}
 	}
 }

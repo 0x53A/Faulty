@@ -19,12 +19,11 @@ namespace AssemblyToProcess
 			}
 			finally
 			{
-				Block.ConvertToTryFault();
+				Block.ConvertFinallyToFault();
 				onFault();
 			}
 			Assert.True(false);
 		}
-
 
 		[Fact]
 		public void NoOp()
@@ -35,11 +34,9 @@ namespace AssemblyToProcess
 			}
 			finally
 			{
-				Block.ConvertToTryFault();
+				Block.ConvertFinallyToFault();
 			}
 		}
-
-
 
 		[Fact]
 		public void ShouldEnterFault()
@@ -61,10 +58,11 @@ namespace AssemblyToProcess
 		{
 			try
 			{
+
 			}
 			finally
 			{
-				Block.ConvertToTryFault();
+				Block.ConvertFinallyToFault();
 				Assert.True(false);
 			}
 		}

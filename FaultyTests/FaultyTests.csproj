@@ -55,6 +55,7 @@
     <Compile Include="ReferenceFinder.cs" />
     <Compile Include="Tests\InvalidProgramTests.cs" />
     <Compile Include="Tests\TestAssemblies\TestAssembly.cs" />
+    <Compile Include="Tests\ValidProgramTests.cs" />
     <Compile Include="Verifier.cs" />
     <Compile Include="VersionReader.cs" />
     <Compile Include="WeaverHelper.cs" />

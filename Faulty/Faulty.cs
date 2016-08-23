@@ -16,7 +16,7 @@ namespace Faulty
 
     public static class Block
     {
-        public static void ConvertToTryFault()
+        public static void ConvertFinallyToFault()
         {
 			throw new NotRewrittenException();
 		}
