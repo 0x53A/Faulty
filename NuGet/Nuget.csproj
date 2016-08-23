@@ -27,34 +27,29 @@
   <Target Name="ReBuild" DependsOnTargets="NuGetBuild" />
   <Target Name="NuGetBuild" DependsOnTargets="Clean">
     <MakeDir Directories="$(SolutionDir)NuGetBuild" />
-    <Copy SourceFiles="$(SolutionDir)PropertyChanged\bin\$(ConfigurationName)\Faulty.dll" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40" />
-    <Copy SourceFiles="$(SolutionDir)PropertyChanged\bin\$(ConfigurationName)\Faulty.xml" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40" />
-    <Copy SourceFiles="$(SolutionDir)PropertyChanged\bin\$(ConfigurationName)\Faulty.dll" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\dotnet" />
-    <Copy SourceFiles="$(SolutionDir)PropertyChanged\bin\$(ConfigurationName)\Faulty.xml" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\dotnet" />
+    <Copy SourceFiles="$(SolutionDir)Faulty\bin\$(ConfigurationName)\Faulty.dll" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40" />
+    <Copy SourceFiles="$(SolutionDir)Faulty\bin\$(ConfigurationName)\Faulty.xml" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40" />
+    <Copy SourceFiles="$(SolutionDir)Faulty\bin\$(ConfigurationName)\Faulty.dll" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\dotnet" />
+    <Copy SourceFiles="$(SolutionDir)Faulty\bin\$(ConfigurationName)\Faulty.xml" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\dotnet" />
     <Copy SourceFiles="$(SolutionDir)NuGet\Faulty.Fody.nuspec" DestinationFolder="$(SolutionDir)NuGetBuild" />
     <Copy SourceFiles="$(ProjectDir)install.ps" DestinationFiles="$(SolutionDir)NuGetBuild\Tools\install.ps1" />
     <Copy SourceFiles="$(ProjectDir)uninstall.ps" DestinationFiles="$(SolutionDir)NuGetBuild\Tools\uninstall.ps1" />
     <Copy SourceFiles="$(ProjectDir)dotnet.targets" DestinationFiles="$(SolutionDir)NuGetBuild\build\dotnet\Faulty.Fody.targets" />
-    <Copy SourceFiles="$(SolutionDir)PropertyChanged.Fody\bin\$(ConfigurationName)\Faulty.Fody.dll" DestinationFolder="$(SolutionDir)NuGetBuild" />
-    <Copy SourceFiles="$(SolutionDir)PropertyChanged.Fody\bin\$(ConfigurationName)\Faulty.Fody.pdb" DestinationFolder="$(SolutionDir)NuGetBuild" />
-    <PepitaPackage.CreatePackageTask NuGetBuildDirectory="$(SolutionDir)NuGetBuild" MetadataAssembly="$(SolutionDir)PropertyChanged.Fody\bin\$(ConfigurationName)\Faulty.Fody.dll" />
+    <Copy SourceFiles="$(SolutionDir)Faulty.Fody\bin\$(ConfigurationName)\Faulty.Fody.dll" DestinationFolder="$(SolutionDir)NuGetBuild" />
+    <Copy SourceFiles="$(SolutionDir)Faulty.Fody\bin\$(ConfigurationName)\Faulty.Fody.pdb" DestinationFolder="$(SolutionDir)NuGetBuild" />
+    <PepitaPackage.CreatePackageTask NuGetBuildDirectory="$(SolutionDir)NuGetBuild" MetadataAssembly="$(SolutionDir)Faulty.Fody\bin\$(ConfigurationName)\Faulty.Fody.dll" />
   </Target>
   <ItemGroup>
     <None Include="dotnet.targets">
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config" />
+    <None Include="paket.references" />
     <None Include="Faulty.Fody.nuspec">
       <SubType>Designer</SubType>
     </None>
     <None Include="install.ps" />
     <None Include="uninstall.ps" />
   </ItemGroup>
-  <Import Project="..\packages\PepitaPackage.1.21.4\build\PepitaPackage.targets" Condition="Exists('..\packages\PepitaPackage.1.21.4\build\PepitaPackage.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\PepitaPackage.1.21.4\build\PepitaPackage.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PepitaPackage.1.21.4\build\PepitaPackage.targets'))" />
-  </Target>
+  <Import Project="..\.paket\paket.targets" />
+  <Import Project="..\packages\PepitaPackage\build\PepitaPackage.targets" Condition="Exists('..\packages\PepitaPackage\build\PepitaPackage.targets')" Label="Paket" />
 </Project>

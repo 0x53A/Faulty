@@ -1,0 +1,10 @@
+FodyCecil
+FSharp.Compiler.Service
+Microsoft.CodeAnalysis.Analyzers
+Microsoft.CodeAnalysis.CSharp
+NSubstitute
+NUnit
+System.Reflection.Metadata
+NUnit3TestAdapter
+xunit
+xunit.runner.visualstudio

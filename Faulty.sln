@@ -1,11 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 14.0.22823.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{1386C7BF-C871-40D0-8A1E-612CF9527F3D}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+	EndProjectSection
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestAssemblies", "TestAssemblies", "{546A6338-E25E-4796-AF08-A4742E3BDF7B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nuget", "NuGet\Nuget.csproj", "{63786CE5-D899-43DF-AD4E-C2CA3BAC3FC2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{40235741-D750-45B1-8DC5-49576025ABA9} = {40235741-D750-45B1-8DC5-49576025ABA9}
+		{C3578A7B-09A6-4444-9383-0DEAFA4958BD} = {C3578A7B-09A6-4444-9383-0DEAFA4958BD}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faulty", "Faulty\Faulty.csproj", "{40235741-D750-45B1-8DC5-49576025ABA9}"
 EndProject
@@ -14,6 +23,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaultyTests", "FaultyTests\FaultyTests.csproj", "{5A86453B-96FB-4B6E-A283-225BB9F753D3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyToProcess", "TestAssemblies\AssemblyToProcess\AssemblyToProcess.csproj", "{43EC5C12-43E3-4CDC-AFA3-4156A910A4FC}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpTestAssembly", "TestAssemblies\FSharpTestAssembly\FSharpTestAssembly.fsproj", "{4CF27685-A626-4032-828F-0BA8134E6176}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,11 +92,24 @@ Global
 		{43EC5C12-43E3-4CDC-AFA3-4156A910A4FC}.Release|ARM.Build.0 = Release|Any CPU
 		{43EC5C12-43E3-4CDC-AFA3-4156A910A4FC}.Release|x86.ActiveCfg = Release|Any CPU
 		{43EC5C12-43E3-4CDC-AFA3-4156A910A4FC}.Release|x86.Build.0 = Release|Any CPU
+		{4CF27685-A626-4032-828F-0BA8134E6176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CF27685-A626-4032-828F-0BA8134E6176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CF27685-A626-4032-828F-0BA8134E6176}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{4CF27685-A626-4032-828F-0BA8134E6176}.Debug|ARM.Build.0 = Debug|Any CPU
+		{4CF27685-A626-4032-828F-0BA8134E6176}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4CF27685-A626-4032-828F-0BA8134E6176}.Debug|x86.Build.0 = Debug|Any CPU
+		{4CF27685-A626-4032-828F-0BA8134E6176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CF27685-A626-4032-828F-0BA8134E6176}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CF27685-A626-4032-828F-0BA8134E6176}.Release|ARM.ActiveCfg = Release|Any CPU
+		{4CF27685-A626-4032-828F-0BA8134E6176}.Release|ARM.Build.0 = Release|Any CPU
+		{4CF27685-A626-4032-828F-0BA8134E6176}.Release|x86.ActiveCfg = Release|Any CPU
+		{4CF27685-A626-4032-828F-0BA8134E6176}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{43EC5C12-43E3-4CDC-AFA3-4156A910A4FC} = {546A6338-E25E-4796-AF08-A4742E3BDF7B}
+		{4CF27685-A626-4032-828F-0BA8134E6176} = {546A6338-E25E-4796-AF08-A4742E3BDF7B}
 	EndGlobalSection
 EndGlobal

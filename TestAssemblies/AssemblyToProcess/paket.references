@@ -1,0 +1,5 @@
+NUnit
+Microsoft.Net.Compilers
+xunit
+xunit.runner.visualstudio
+Fody
